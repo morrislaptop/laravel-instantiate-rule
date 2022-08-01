@@ -8,15 +8,20 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/morrislaptop/laravel-instantiate-rule/Fix%20PHP%20code%20style%20issues?label=code%20style)](https://github.com/morrislaptop/laravel-instantiate-rule/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/morrislaptop/laravel-instantiate-rule.svg?style=flat-square)](https://packagist.org/packages/morrislaptop/laravel-instantiate-rule)
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+Your validation rules often belong in your domain model. Use the `InstantiateRule` to bring those rules
+into your Laravel validation. 
 
-## Support us
-
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/laravel-instantiate-rule.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/laravel-instantiate-rule)
-
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
+```php
+class FormRequest 
+{
+    public function rules()
+    {
+        return [
+            'email' => ['required', new InstantiateRule(EmailAddress::class)]
+        ];
+    }
+}
+```
 
 ## Installation
 
@@ -26,37 +31,65 @@ You can install the package via composer:
 composer require morrislaptop/laravel-instantiate-rule
 ```
 
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --tag="laravel-instantiate-rule-migrations"
-php artisan migrate
-```
-
-You can publish the config file with:
-
-```bash
-php artisan vendor:publish --tag="laravel-instantiate-rule-config"
-```
-
-This is the contents of the published config file:
-
-```php
-return [
-];
-```
-
-Optionally, you can publish the views using
-
-```bash
-php artisan vendor:publish --tag="laravel-instantiate-rule-views"
-```
-
 ## Usage
 
+As a simple rule
+
 ```php
-$laravelInstantiateRule = new Morrislaptop\LaravelInstantiateRule();
-echo $laravelInstantiateRule->echoPhrase('Hello, Morrislaptop!');
+class FormRequest 
+{
+    public function rules()
+    {
+        return [
+            'email' => ['required', new InstantiateRule(EmailAddress::class)]
+        ];
+    }
+}
+```
+
+For complex objects, it's assumed array keys match the constructor object or are in the order of the constructor.
+
+```php
+class Address
+{
+    public function __construct(
+        private string $line1, 
+        private string $postcode, 
+        private string $country) {
+    }
+}
+
+$this->jsonPost('/users', ['address' => [
+    'line1' => '123 Fake St',
+    'postcode' => '90210',
+    'country' => 'Australia',
+]]);
+```
+
+```php
+class FormRequest 
+{
+    public function rules()
+    {
+        return [
+            'address' => ['required', new InstantiateRule(Address::class)]
+        ];
+    }
+}
+```
+
+Or you can specify a custom static contructor if you like...
+
+```php
+class FormRequest 
+{
+    public function rules()
+    {
+        return [
+            'address' => ['required', new InstantiateRule(Address::class, 'createForValidation')]
+        ];
+    }
+}
 ```
 
 ## Testing
