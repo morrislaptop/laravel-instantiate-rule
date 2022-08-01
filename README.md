@@ -3,16 +3,16 @@
 
 # Validate against an object's constructor
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/morrislaptop/laravel-value-object-rule.svg?style=flat-square)](https://packagist.org/packages/morrislaptop/laravel-value-object-rule)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/morrislaptop/laravel-value-object-rule/run-tests?label=tests)](https://github.com/morrislaptop/laravel-value-object-rule/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/morrislaptop/laravel-value-object-rule/Fix%20PHP%20code%20style%20issues?label=code%20style)](https://github.com/morrislaptop/laravel-value-object-rule/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/morrislaptop/laravel-value-object-rule.svg?style=flat-square)](https://packagist.org/packages/morrislaptop/laravel-value-object-rule)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/morrislaptop/laravel-instantiate-rule.svg?style=flat-square)](https://packagist.org/packages/morrislaptop/laravel-instantiate-rule)
+[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/morrislaptop/laravel-instantiate-rule/run-tests?label=tests)](https://github.com/morrislaptop/laravel-instantiate-rule/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/morrislaptop/laravel-instantiate-rule/Fix%20PHP%20code%20style%20issues?label=code%20style)](https://github.com/morrislaptop/laravel-instantiate-rule/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
+[![Total Downloads](https://img.shields.io/packagist/dt/morrislaptop/laravel-instantiate-rule.svg?style=flat-square)](https://packagist.org/packages/morrislaptop/laravel-instantiate-rule)
 
 This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
 
 ## Support us
 
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/laravel-value-object-rule.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/laravel-value-object-rule)
+[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/laravel-instantiate-rule.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/laravel-instantiate-rule)
 
 We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
 
@@ -23,20 +23,20 @@ We highly appreciate you sending us a postcard from your hometown, mentioning wh
 You can install the package via composer:
 
 ```bash
-composer require morrislaptop/laravel-value-object-rule
+composer require morrislaptop/laravel-instantiate-rule
 ```
 
 You can publish and run the migrations with:
 
 ```bash
-php artisan vendor:publish --tag="laravel-value-object-rule-migrations"
+php artisan vendor:publish --tag="laravel-instantiate-rule-migrations"
 php artisan migrate
 ```
 
 You can publish the config file with:
 
 ```bash
-php artisan vendor:publish --tag="laravel-value-object-rule-config"
+php artisan vendor:publish --tag="laravel-instantiate-rule-config"
 ```
 
 This is the contents of the published config file:
@@ -49,14 +49,14 @@ return [
 Optionally, you can publish the views using
 
 ```bash
-php artisan vendor:publish --tag="laravel-value-object-rule-views"
+php artisan vendor:publish --tag="laravel-instantiate-rule-views"
 ```
 
 ## Usage
 
 ```php
-$laravelValueObjectRule = new Morrislaptop\LaravelValueObjectRule();
-echo $laravelValueObjectRule->echoPhrase('Hello, Morrislaptop!');
+$laravelInstantiateRule = new Morrislaptop\LaravelInstantiateRule();
+echo $laravelInstantiateRule->echoPhrase('Hello, Morrislaptop!');
 ```
 
 ## Testing

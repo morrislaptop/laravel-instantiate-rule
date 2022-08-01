@@ -1,12 +1,12 @@
 {
-    "name": "morrislaptop/laravel-value-object-rule",
+    "name": "morrislaptop/laravel-instantiate-rule",
     "description": "Validate against an object's constructor",
     "keywords": [
         "morrislaptop",
         "laravel",
-        "laravel-value-object-rule"
+        "laravel-instantiate-rule"
     ],
-    "homepage": "https://github.com/morrislaptop/laravel-value-object-rule",
+    "homepage": "https://github.com/morrislaptop/laravel-instantiate-rule",
     "license": "MIT",
     "authors": [
         {
@@ -35,13 +35,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Morrislaptop\\LaravelValueObjectRule\\": "src",
-            "Morrislaptop\\LaravelValueObjectRule\\Database\\Factories\\": "database/factories"
+            "Morrislaptop\\LaravelInstantiateRule\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Morrislaptop\\LaravelValueObjectRule\\Tests\\": "tests"
+            "Morrislaptop\\LaravelInstantiateRule\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -55,16 +54,6 @@
         "allow-plugins": {
             "pestphp/pest-plugin": true,
             "phpstan/extension-installer": true
-        }
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Morrislaptop\\LaravelValueObjectRule\\LaravelValueObjectRuleServiceProvider"
-            ],
-            "aliases": {
-                "LaravelValueObjectRule": "Morrislaptop\\LaravelValueObjectRule\\Facades\\LaravelValueObjectRule"
-            }
         }
     },
     "minimum-stability": "dev",

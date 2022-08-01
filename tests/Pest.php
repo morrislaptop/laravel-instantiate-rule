@@ -1,5 +1,5 @@
 <?php
 
-use Morrislaptop\LaravelValueObjectRule\Tests\TestCase;
+use Morrislaptop\LaravelInstantiateRule\Tests\TestCase;
 
 uses(TestCase::class)->in(__DIR__);

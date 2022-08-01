@@ -20,12 +20,12 @@
 >
     <testsuites>
         <testsuite name="Morrislaptop Test Suite">
-            <directory>tests</directory>
+            <directory>src</directory>
         </testsuite>
     </testsuites>
     <coverage>
         <include>
-            <directory suffix=".php">./src</directory>
+            <directory suffix="Test.php">./src</directory>
         </include>
         <report>
             <html outputDirectory="build/coverage"/>
