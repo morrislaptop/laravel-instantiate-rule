@@ -10,11 +10,10 @@ class InstantiateRule implements Rule
     private string $message;
 
     /**
-     * @param class-string $className
+     * @param  class-string  $className
      */
     public function __construct(private string $className, private ?string $constructorMethod = null)
     {
-
     }
 
     /**
@@ -31,15 +30,14 @@ class InstantiateRule implements Rule
 
             if ($constructorMethod) {
                 $this->className::$constructorMethod(...(array) $value);
-            }
-            else {
+            } else {
                 new $this->className(...(array) $value);
             }
 
             return true;
-        }
-        catch (Throwable $t) {
+        } catch (Throwable $t) {
             $this->message = $t->getMessage();
+
             return false;
         }
     }
