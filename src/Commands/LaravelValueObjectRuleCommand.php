@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Morrislaptop\LaravelValueObjectRule\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class LaravelValueObjectRuleCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel-value-object-rule';
 
     public $description = 'My command';
 

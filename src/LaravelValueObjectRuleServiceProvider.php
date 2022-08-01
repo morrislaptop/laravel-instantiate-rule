@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton;
+namespace Morrislaptop\LaravelValueObjectRule;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use VendorName\Skeleton\Commands\SkeletonCommand;
+use Morrislaptop\LaravelValueObjectRule\Commands\LaravelValueObjectRuleCommand;
 
-class SkeletonServiceProvider extends PackageServiceProvider
+class LaravelValueObjectRuleServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
@@ -16,10 +16,10 @@ class SkeletonServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('skeleton')
+            ->name('laravel-value-object-rule')
             ->hasConfigFile()
             ->hasViews()
-            ->hasMigration('create_skeleton_table')
-            ->hasCommand(SkeletonCommand::class);
+            ->hasMigration('create_laravel-value-object-rule_table')
+            ->hasCommand(LaravelValueObjectRuleCommand::class);
     }
 }
