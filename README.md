@@ -64,9 +64,7 @@ $this->jsonPost('/users', ['address' => [
     'postcode' => '90210',
     'country' => 'Australia',
 ]]);
-```
 
-```php
 class FormRequest 
 {
     public function rules()
